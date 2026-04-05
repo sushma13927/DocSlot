@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocSlot - Patient Appointment System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-left">
+    <img class="nav-logo" src="logo.png" alt="DocSlot Logo">
+    <span class="nav-title">DocSlot</span>
+  </div>
+</div>
+
+<!-- ==================== LOGIN ==================== -->
+<div id="loginPage" class="page active">
+  <div class="center-card">
+    <img class="card-logo" src="logo.png" alt="DocSlot Logo">
+    <h2 class="card-title">Welcome to DocSlot</h2>
+
+    <div class="input-group">
+      <span class="input-icon">👤</span>
+      <input id="loginIdentifier" placeholder="Email / Username / Phone" autocomplete="off" required>
+    </div>
+
+    <div class="input-group">
+      <span class="input-icon">🔒</span>
+      <input id="loginPassword" type="password" placeholder="Password" autocomplete="new-password" required>
+    </div>
+
+    <button class="full-btn" id="loginBtn">Login</button>
+
+    <p class="switch-text">
+      Don't have an account?
+      <span id="goSignup" class="link">Sign up</span>
+    </p>
+  </div>
+</div>
+
+<!-- ==================== SIGNUP ==================== -->
+<div id="signupPage" class="page">
+  <div class="center-card">
+    <svg class="card-logo" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 160 160" role="img" aria-label="DocSlot Logo">
+    <defs><linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563c7"/><stop offset="100%" stop-color="#1a3f9e"/></linearGradient></defs>
+    <rect width="160" height="160" rx="28" fill="url(#cg)"/>
+    <line x1="50" y1="46" x2="70" y2="46" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <line x1="50" y1="46" x2="50" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="50" cy="32" r="5" fill="white"/>
+    <line x1="70" y1="46" x2="70" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="70" cy="32" r="5" fill="white"/>
+    <path d="M60 46 C60 56 60 62 60 62 C60 80 68 96 84 102 C98 108 112 100 112 84 L112 76" fill="none" stroke="#e879c8" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="112" cy="70" r="11" fill="none" stroke="#38d9d9" stroke-width="5.5"/>
+    <circle cx="112" cy="70" r="4" fill="#38d9d9"/>
+    <text x="80" y="136" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">DocSlot</text>
+  </svg>
+    <h2 class="card-title">Create Account</h2>
+
+    <input id="signupName" placeholder="Full Name">
+    <input id="signupUsername" placeholder="Username">
+    <input id="signupEmail" type="email" placeholder="Email">
+
+    <div class="phone-group">
+      <select id="signupCountryCode">
+        <option value="+91">+91</option>
+        <option value="+1">+1</option>
+      </select>
+      <input id="signupPhone" placeholder="Phone">
+    </div>
+
+    <select id="signupRole">
+      <option value="">Select Role</option>
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <input id="signupPassword" type="password" placeholder="Password">
+    <input id="signupConfirm" type="password" placeholder="Confirm Password">
+
+    <button id="sendOtpBtn" class="full-btn">Send OTP</button>
+
+    <p class="switch-text">
+      Already have an account?
+      <span id="goLogin" class="link">Login</span>
+    </p>
+  </div>
+</div>
+
+<!-- ==================== OTP ==================== -->
+<div id="otpPage" class="page">
+  <div class="center-card">
+    <svg class="card-logo" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 160 160" role="img" aria-label="DocSlot Logo">
+    <defs><linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563c7"/><stop offset="100%" stop-color="#1a3f9e"/></linearGradient></defs>
+    <rect width="160" height="160" rx="28" fill="url(#cg)"/>
+    <line x1="50" y1="46" x2="70" y2="46" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <line x1="50" y1="46" x2="50" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="50" cy="32" r="5" fill="white"/>
+    <line x1="70" y1="46" x2="70" y2="36" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="70" cy="32" r="5" fill="white"/>
+    <path d="M60 46 C60 56 60 62 60 62 C60 80 68 96 84 102 C98 108 112 100 112 84 L112 76" fill="none" stroke="#e879c8" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="112" cy="70" r="11" fill="none" stroke="#38d9d9" stroke-width="5.5"/>
+    <circle cx="112" cy="70" r="4" fill="#38d9d9"/>
+    <text x="80" y="136" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">DocSlot</text>
+  </svg>
+    <h2 class="card-title">Verify OTP</h2>
+    <p class="switch-text" style="margin-bottom:8px;">OTP has been sent to your email/phone</p>
+    <input id="otpInput" placeholder="Enter 6-digit OTP" maxlength="6">
+    <button id="verifyOtpBtn" class="full-btn">Verify & Create Account</button>
+    <button id="backSignup" class="full-btn ghost">Back</button>
+  </div>
+</div>
+
+<!-- ==================== PATIENT DASHBOARD ==================== -->
+<div id="patientDashboardPage" class="page">
+  <div class="dashboard-header">
+    <span id="patientWelcome">Welcome, Patient</span>
+    <button id="patientLogoutBtn" class="mini-btn">Logout</button>
+  </div>
+  <div class="dashboard-body">
+    <div id="patientDashboardContent">
+      <button id="startBookingBtn" class="full-btn">+ Book Appointment</button>
+      <button id="patientHistoryBtn" class="full-btn ghost" style="margin-top:10px;">My Appointments</button>
+    </div>
+    <div id="patientApptsList" style="display:none;"></div>
+    <button id="backToPatientDashBtn" class="full-btn ghost" style="display:none;">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== HOSPITAL SELECT ==================== -->
+<div id="hospitalPage" class="page">
+  <div class="center-card">
+    <h2 class="card-title">Select Hospital</h2>
+    <select id="hospitalSelect"><option value="">Select Hospital</option></select>
+    <button id="hospitalNextBtn" class="full-btn">Next →</button>
+    <button id="hospitalBackBtn" class="full-btn ghost">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== REASON PAGE ==================== -->
+<div id="reasonPage" class="page">
+  <div class="center-card">
+    <h2 class="card-title">Describe Symptoms</h2>
+    <textarea id="reasonText" placeholder="Describe your symptoms or reason for visit..."></textarea>
+    <button id="reasonNextBtn" class="full-btn">Next →</button>
+    <button id="reasonBackBtn" class="full-btn ghost">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== DOCTOR SELECT ==================== -->
+<div id="doctorSelectPage" class="page">
+  <div class="center-card">
+    <h2 class="card-title">Select Doctor</h2>
+    <p id="suggestedDeptInfo" class="switch-text" style="margin-bottom:8px;"></p>
+    <select id="doctorSelect"><option value="">Select Doctor</option></select>
+    <button id="doctorNextBtn" class="full-btn">Next →</button>
+    <button id="doctorBackBtn" class="full-btn ghost">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== APPOINTMENT DATE/TIME ==================== -->
+<div id="appointmentPage" class="page">
+  <div class="center-card">
+    <h2 class="card-title">Select Date & Time</h2>
+    <input type="date" id="appointmentDate">
+    <div id="timeSlots" style="display:flex;flex-direction:column;gap:8px;margin:10px 0;"></div>
+    <button id="apptNextBtn" class="full-btn">Next →</button>
+    <button id="apptBackBtn" class="full-btn ghost">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== PAYMENT ==================== -->
+<div id="paymentPage" class="page">
+  <div class="center-card">
+    <h2 class="card-title">Payment</h2>
+    <div id="appointmentSummary" class="summary-box"></div>
+    <select id="paymentMethod">
+      <option value="">Select Payment Method</option>
+      <option value="upi">UPI</option>
+      <option value="card">Card</option>
+      <option value="cash">Cash at Hospital</option>
+    </select>
+    <button id="paymentConfirmBtn" class="full-btn">Confirm & Pay</button>
+    <button id="paymentBackBtn" class="full-btn ghost">← Back</button>
+  </div>
+</div>
+
+<!-- ==================== RECEIPT ==================== -->
+<div id="receiptPage" class="page">
+  <div class="center-card">
+    <div id="receiptDetails"></div>
+    <button id="receiptDoneBtn" class="full-btn">Done</button>
+  </div>
+</div>
+
+<!-- ==================== DOCTOR DASHBOARD ==================== -->
+<div id="doctorDashboardPage" class="page">
+  <div class="dashboard-header">
+    <span id="doctorWelcome">Welcome, Doctor</span>
+    <button id="doctorLogoutBtn" class="mini-btn">Logout</button>
+  </div>
+  <div class="dashboard-body">
+    <div id="doctorTodayList"></div>
+    <div id="doctorAllList"></div>
+  </div>
+</div>
+
+<!-- ==================== ADMIN DASHBOARD ==================== -->
+<div id="adminDashboardPage" class="page">
+  <div class="dashboard-header">
+    <span id="adminWelcome">Welcome, Admin</span>
+    <button id="adminLogoutBtn" class="mini-btn">Logout</button>
+  </div>
+  <div class="dashboard-body">
+
+    <!-- Add Hospital -->
+    <div class="admin-form">
+      <h3>Add Hospital</h3>
+      <input id="newHospitalName" placeholder="Hospital Name">
+      <input id="newHospitalAddress" placeholder="Address">
+      <input id="newHospitalPhone" placeholder="Phone">
+      <button id="addHospitalBtn" class="full-btn">Add Hospital</button>
+    </div>
+
+    <!-- Add Department -->
+    <div class="admin-form">
+      <h3>Add Department</h3>
+      <select id="adminHospitalSelect"><option value="">Select Hospital</option></select>
+      <select id="adminDeptSelect"><option value="">Select Hospital First</option></select>
+      <input id="newDeptName" placeholder="Department Name">
+      <button id="addDeptBtn" class="full-btn">Add Department</button>
+    </div>
+
+    <!-- Assign Doctor -->
+    <div class="admin-form">
+      <h3>Assign Doctor</h3>
+      <select id="doctorHospitalSelect"><option value="">Select Hospital</option></select>
+      <select id="doctorDeptSelect"><option value="">Select Department</option></select>
+      <input id="newDoctorName" placeholder="Doctor Name">
+      <input id="newDoctorEmail" placeholder="Doctor Email">
+      <input id="newDoctorPhone" placeholder="Doctor Phone">
+      <button id="assignDoctorBtn" class="full-btn">Assign Doctor</button>
+    </div>
+
+    <!-- Set Fee -->
+    <div class="admin-form">
+      <h3>Set Consultation Fee</h3>
+      <select id="feeHospitalSelect"><option value="">Select Hospital</option></select>
+      <select id="feeDeptSelect"><option value="">Select Department</option></select>
+      <input id="newFee" type="number" placeholder="Fee Amount (₹)">
+      <button id="adminSetFeeBtn" class="full-btn">Update Fee</button>
+    </div>
+
+    <div id="adminAppointmentsList"></div>
+
+  </div>
+</div>
+
+<script src="workflow-utils.js"></script>
+<script src="storage-auth.js"></script>
+<script src="booking-stage-1.js"></script>
+<script src="booking-stage-2.js"></script>
+<script src="doctor-admin.js"></script>
+</body>
+</html>

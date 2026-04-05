@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DocSlot - Appointment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img class="nav-logo" src="logo.png" alt="DocSlot Logo">
+        <span class="nav-title">DocSlot</span>
+    </div>
+</nav>
+
+<section class="page active">
+    <div class="card" id="doctorDetailsCard"></div>
+    <div class="card">
+        <h3>Book Appointment</h3>
+        <input type="date" id="rescheduleDate">
+        <div id="timeSlots"></div>
+        <input type="text" id="reasonInput" placeholder="Reason for visit">
+        <button id="confirmAppointmentBtn" class="btn primary">Confirm Appointment</button>
+    </div>
+</section>
+
+<script src="workflow-utils.js"></script>
+<script src="storage-auth.js"></script>
+<script src="appointment.js"></script>
+</body>
+</html>
